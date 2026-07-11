@@ -1,0 +1,28 @@
+# 敏感词和合规规则
+sensitive_words:
+  - "第一"
+  - "最好"
+  - "最"
+  - "国家级"
+  - "世界级"
+  - "唯一"
+  - "顶级"
+  - "绝对"
+
+# 竞品名称检测（示例）
+competitor_names: []
+
+# 平台特定规则
+platform_rules:
+  douyin:
+    max_video_duration_sec: 900
+    recommended_ratio: "9:16"
+  xiaohongshu:
+    max_images: 18
+    recommended_ratio: "3:4"
+  bilibili:
+    max_video_duration_sec: 3600
+    recommended_ratio: "16:9"
+  twitter:
+    max_text_length: 280
+    recommended_ratio: "1:1"

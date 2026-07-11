@@ -1,0 +1,48 @@
+app:
+  name: "Social Media Auto-Pilot"
+  version: "0.1.0"
+  debug: true
+
+server:
+  host: "0.0.0.0"
+  port: 8000
+  workers: 1
+  reload: true
+
+database:
+  url: "sqlite:///data/db/social_auto_pilot.db"
+  echo: false
+  pool_size: 5
+
+storage:
+  base_path: "data/files"
+  temp_path: "data/files/temp"
+  max_upload_size_mb: 500
+
+llm:
+  base_url: "${LLM_BASE_URL}"
+  model: "${LLM_MODEL}"
+  small_model: "${LLM_SMALL_MODEL}"
+  max_tokens: 4096
+  temperature: 0.7
+  request_timeout: 60
+
+browser:
+  headless: true
+  timeout: 30000
+  max_concurrent: 1
+  stealth_mode: true
+
+media:
+  ffmpeg_path: "ffmpeg"
+  image_quality: 85
+  video_bitrate: "2M"
+
+scheduler:
+  timezone: "Asia/Shanghai"
+
+logging:
+  level: "INFO"
+  format: "{time:YYYY-MM-DD HH:mm:ss} | {level} | {name}:{function}:{line} | {message}"
+  rotation: "10 MB"
+  retention: "30 days"

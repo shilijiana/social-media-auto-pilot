@@ -1,0 +1,25 @@
+rules:
+  - id: R001
+    name: "图片清晰度检查"
+    category: "素材"
+    expression: "image.resolution_width >= 1920"
+    priority: 1
+    enabled: true
+  - id: R002
+    name: "视频时长检查"
+    category: "素材"
+    expression: "video.duration_sec <= platform.max_duration"
+    priority: 1
+    enabled: true
+  - id: R003
+    name: "文案敏感词检查"
+    category: "内容"
+    expression: "not contains_any(text, sensitive_words)"
+    priority: 1
+    enabled: true
+  - id: R004
+    name: "封面尺寸检查"
+    category: "内容"
+    expression: "image.aspect_ratio == platform.recommended_ratio"
+    priority: 2
+    enabled: true
