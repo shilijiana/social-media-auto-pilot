@@ -74,6 +74,5 @@ class Pipeline:
         return None
 
     def get_entry_steps(self) -> List[Step]:
-        """获取没有依赖的入口步骤。"""
-        all_deps = {d for s in self.steps for d in s.depends_on}
-        return [s for s in self.steps if s.id not in all_deps]
+        """获取没有依赖的入口步骤（可以最先执行的步骤）。"""
+        return [s for s in self.steps if not s.depends_on]
